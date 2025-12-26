@@ -50,4 +50,4 @@ class Config:
         return self.__system_prompt
 
     def get_paths_to_data(self) -> List:
-        return self.__paths_to_data[::]
+        return self.__paths_to_data.copy()

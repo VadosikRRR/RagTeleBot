@@ -30,5 +30,5 @@ class TelegramBot:
         async def handle_message(message: Message):
             user_id = message.from_user.id
             await self.__bot.send_chat_action(user_id, 'typing')
-            answer = await self.__backend.process_user_query(user_id, message.text)
+            answer = await self.__backend.process_user_query(message.text)
             await self.__bot.reply_to(message, answer)
