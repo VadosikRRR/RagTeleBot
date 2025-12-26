@@ -6,6 +6,7 @@ class Config:
         llm_name: str,
         embed_model_name: str,
         chunk_size: int,
+        chunk_overlap: int,
         top_k: int,
         system_promt: str
     ) -> None:
@@ -15,6 +16,7 @@ class Config:
         self.__llm_name: str = llm_name
         self.__embed_model_name: str = embed_model_name
         self.__chunk_size: int = chunk_size
+        self.__chunk_overlap: int = chunk_overlap
         self.__top_k: int = top_k
         self.__system_promt: str = system_promt
 
@@ -35,6 +37,9 @@ class Config:
 
     def get_top_k(self) -> int:
         return self.__top_k
+    
+    def get_chunk_overlap(self) -> int:
+        return self.__chunk_overlap
 
     def get_system_promt(self) -> str:
         return self.__system_promt
