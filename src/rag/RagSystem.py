@@ -21,6 +21,7 @@ class RagSystem:
         embed_model_name: str,
         chunk_size: int,
         chunk_overlap: int,
+        top_k: int,
         system_prompt: str,
         paths_to_data: List
     ) -> None:
@@ -30,6 +31,7 @@ class RagSystem:
         self.__embed_model_name: str = embed_model_name
         self.__chunk_size: int = chunk_size
         self.__chunk_overlap: int = chunk_overlap
+        self.__top_k: int = top_k
         self.__system_prompt = system_prompt
         self.__index_path = "vector_db_index"
 
@@ -86,7 +88,7 @@ class RagSystem:
 
     def __retrieve_context(self, query: str):
         """Retrieve information to help answer a query."""
-        retrieved_docs = self.__vector_store.similarity_search(query, k=2)
+        retrieved_docs = self.__vector_store.similarity_search(query, k=self.__top_k)
         serialized = "\n\n".join(
             (f"Source: {doc.metadata}\nContent: {doc.page_content}")
             for doc in retrieved_docs
