@@ -8,7 +8,7 @@ class Config:
         chunk_size: int,
         chunk_overlap: int,
         top_k: int,
-        system_promt: str
+        system_prompt: str
     ) -> None:
         
         self.__bot_token: str = bot_token
@@ -18,7 +18,7 @@ class Config:
         self.__chunk_size: int = chunk_size
         self.__chunk_overlap: int = chunk_overlap
         self.__top_k: int = top_k
-        self.__system_promt: str = system_promt
+        self.__system_prompt: str = system_prompt
 
     def get_bot_token(self) -> str:
         return self.__bot_token
@@ -41,5 +41,5 @@ class Config:
     def get_chunk_overlap(self) -> int:
         return self.__chunk_overlap
 
-    def get_system_promt(self) -> str:
-        return self.__system_promt
+    def get_system_prompt(self) -> str:
+        return self.__system_prompt
