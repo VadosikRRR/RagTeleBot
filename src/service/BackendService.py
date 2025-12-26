@@ -22,6 +22,7 @@ class BackendService:
             embed_model_name=config.get_embed_model_name(),
             chunk_size=config.get_chunk_size(),
             chunk_overlap=config.get_chunk_overlap(),
+            top_k=config.get_top_k(),
             system_prompt=config.get_system_prompt(),
             paths_to_data=config.get_paths_to_data()
         )

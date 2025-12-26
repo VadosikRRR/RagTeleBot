@@ -102,8 +102,8 @@ class RagSystem:
             
             if file_extension == ".csv":
                 data = pd.read_csv(path)
-            elif file_extension == ".xlxs":
-                data = pd.read_excel(path)
+            elif file_extension == ".xlsx":
+                data = pd.read_excel(path, header=1)
 
             data = self.__process_table_data(data)
             loader = DataFrameLoader(data, page_content_column="context")
