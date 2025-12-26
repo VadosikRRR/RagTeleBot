@@ -6,7 +6,8 @@ class Config:
         llm_name: str,
         embed_model_name: str,
         chunk_size: int,
-        top_k: int
+        top_k: int,
+        system_promt: str
     ) -> None:
         
         self.__bot_token: str = bot_token
@@ -15,6 +16,7 @@ class Config:
         self.__embed_model_name: str = embed_model_name
         self.__chunk_size: int = chunk_size
         self.__top_k: int = top_k
+        self.__system_promt: str = system_promt
 
     def get_bot_token(self) -> str:
         return self.__bot_token
@@ -33,3 +35,6 @@ class Config:
 
     def get_top_k(self) -> int:
         return self.__top_k
+
+    def get_system_promt(self) -> str:
+        return self.__system_promt
