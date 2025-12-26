@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Config:
     def __init__(
         self,
@@ -8,7 +11,8 @@ class Config:
         chunk_size: int,
         chunk_overlap: int,
         top_k: int,
-        system_prompt: str
+        system_prompt: str,
+        paths_to_data: List
     ) -> None:
         
         self.__bot_token: str = bot_token
@@ -19,6 +23,7 @@ class Config:
         self.__chunk_overlap: int = chunk_overlap
         self.__top_k: int = top_k
         self.__system_prompt: str = system_prompt
+        self.__paths_to_data: List = paths_to_data
 
     def get_bot_token(self) -> str:
         return self.__bot_token
@@ -43,3 +48,6 @@ class Config:
 
     def get_system_prompt(self) -> str:
         return self.__system_prompt
+
+    def get_paths_to_data(self) -> List:
+        return self.__paths_to_data[::]
